@@ -1,0 +1,26 @@
+---- |Template ----
+I am a simple {{changeme}}. 
+
+This is an example of a file-ref for json: {{fileRef1}}
+
+This is an example of a file-ref for xml: {{fileRef2}}
+
+This is an example of a file-ref for, well... everything else: {{fileRef3}}
+
+---- /Template ----
+
+---- |changeme ----
+test test test
+---- /changeme ----
+
+---- |fileRef1 ----
+%userprofile%\package.json|$.dependencies.argparse
+---- /fileRef1 ----
+
+---- |fileRef2 ----
+%userprofile%\test.xml|$.root.person[0].name
+---- /fileRef2 ----
+
+---- |fileRef3 ----
+%userprofile%\everything-else.ini|random-setting=(?<replacement>.*)
+---- /fileRef3 ----
