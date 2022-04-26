@@ -15,6 +15,7 @@ New-Item -Path "$buildPath\bin" -Force -Name "mac" -ItemType "directory" > $null
 
 Copy-Item $loupedeckYaml -Force -Destination $buildPath > $null
 Copy-Item "$dllPath\$dllName" -Force -Destination "$buildPath\bin\win\$dllName" > $null
+Copy-Item "$dllPath\$dllName" -Force -Destination "$buildPath\bin\mac\$dllName" > $null
 
 $compress = @{
 	Path = "$buildPath\*"
