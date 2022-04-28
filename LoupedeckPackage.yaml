@@ -1,6 +1,6 @@
 type: plugin4
 name: TextTemplate
-displayName: TextTemplate
+displayName: Text Template Plugin
 version: 1.0.0
 author: Steinerd.com
 copyright: Copyright (c) 2022 Anthony Steiner
@@ -10,5 +10,10 @@ supportedDevices:
   - LoupedeckLive
 
 pluginFileName: TextTemplatePlugin.dll
-pluginFolderWin: ./bin/win/
-pluginFolderMac: ./bin/mac/
+pluginFolderWin: ./bin/
+pluginFolderMac: ./bin/
+
+license: MIT
+licenseUrl: https://opensource.org/licenses/MIT
+homePageUrl: https://github.com/Steinerd/Loupedeck.TextTemplatePlugin
+supportPageUrl: https://github.com/Steinerd/Loupedeck.TextTemplatePlugin/issues
