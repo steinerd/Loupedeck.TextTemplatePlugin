@@ -9,9 +9,15 @@ $pluginName = "$outputFileName.lplug4"
 $loupedeckYaml = "LoupedeckPackage.yaml"
 $cwd = Get-Location
 
-New-Item -Path "$buildPath" -Force -Name "bin" -ItemType "directory" > $null
+if( Test-Path $buildPath){
+	Remove-Item -Path "$buildPath" -Force -Recurse 
+}
 
-Copy-Item $loupedeckYaml -Force -Destination $buildPath > $null
+New-Item -Path "$buildPath" -Force -Name "bin" -ItemType "directory" > $null
+New-Item -Path "$buildPath" -Force -Name "metadata" -ItemType "directory" > $null
+
+Copy-Item "$loupedeckYaml" -Force -Destination "$buildPath\metadata\$loupedeckYaml" > $null
+Copy-Item "$($project)Plugin\Resources\256.png" -Force -Destination "$buildPath\metadata\256.png" > $null
 Copy-Item "$dllPath\$dllName" -Force -Destination "$buildPath\bin\$dllName" > $null
 
 $compress = @{
